@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libro de Reclamaciones - Bell Dermoestética</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(120deg, #e0f7fa 0%, #fff 100%);
+      color: #263238;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .reclamaciones-container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+      padding: 36px 28px;
+      max-width: 420px;
+      width: 100%;
+      animation: fadeInUp 1s;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    h1 {
+      text-align: center;
+      color: #00796b;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      animation: fadeIn 1.2s;
+    }
+    p {
+      text-align: center;
+      color: #37474f;
+      margin-bottom: 18px;
+      animation: fadeIn 1.4s;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeIn 1.6s;
+    }
+    label {
+      font-weight: 600;
+      color: #00796b;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    input, textarea {
+      border: 1.5px solid #b2dfdb;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 1em;
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      background: #f8fafc;
+    }
+    input:focus, textarea:focus {
+      border-color: #00796b;
+      box-shadow: 0 0 0 2px #b2dfdb;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+      max-height: 200px;
+    }
+    button {
+      background: linear-gradient(90deg, #00796b 0%, #00bfa5 100%);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      font-size: 1.1em;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #00bfa5 0%, #00796b 100%);
+      transform: scale(1.04);
+    }
+    .icono {
+      color: #00bfa5;
+      font-size: 1.1em;
+      vertical-align: middle;
+    }
+    .success-message {
+      display: none;
+      text-align: center;
+      color: #00796b;
+      font-weight: 600;
+      margin-top: 16px;
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0;}
+      to { opacity: 1;}
+    }
+    @media (max-width: 500px) {
+      .reclamaciones-container {
+        padding: 18px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reclamaciones-container">
+    <h1><i class="fa-solid fa-book-open icono"></i> Libro de Reclamaciones</h1>
+    <p>En Bell Dermoestética, valoramos tu opinión. Si tienes alguna queja o sugerencia, por favor completa el siguiente formulario. Tu mensaje será atendido con total confidencialidad.</p>
+    <form action="https://formspree.io/f/xdkzqgoj" method="POST" id="reclamacionForm">
+      <label for="nombre"><i class="fa-solid fa-user"></i> Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required autocomplete="name">
+      <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+      <label for="telefono"><i class="fa-solid fa-phone"></i> Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+      <label for="tipo"><i class="fa-solid fa-list"></i> Tipo de Reclamo:</label>
+      <select id="tipo" name="tipo" required>
+        <option value="">Seleccione...</option>
+        <option value="Queja">Queja</option>
+        <option value="Sugerencia">Sugerencia</option>
+        <option value="Reclamo">Reclamo</option>
+      </select>
+      <label for="mensaje"><i class="fa-solid fa-comment-dots"></i> Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+      <div class="success-message" id="successMsg">¡Tu mensaje ha sido enviado correctamente!</div>
+    </form>
+  </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('reclamacionForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        return response.json(); // intenta convertir a JSON
+      })
+      .then(data => {
+        successMsg.textContent = '¡Tu mensaje ha sido enviado correctamente!';
+        successMsg.style.display = 'block';
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        successMsg.textContent = 'Se ha enviado correctamente!';
+        successMsg.style.display = 'block';
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,665 @@
+*{
+  margin: 0;
+  padding: 0%;
+  /* el borde es para que quede mejor el padding*/
+  box-sizing: border-box;
+  /*eL texto es para quitar las lineas de los enlaces*/
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  /*El list style es para quitar las bolas de las listas*/
+  list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*-----------------------Header-Contenido------------------------*/
+
+.header-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+    background-color:#00796b;
+}
+
+#logo {
+    width: 6rem;
+    height: 6rem;
+    margin: 30px 0;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Hace que cualquier cambio en las propiedades de Transform y box-shadow
+     se vea mediante una transicion suave*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#logo:hover {
+  /*este Transform lo que hace es agrandar el logo cuando se acerca el mouse*/
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.logo-circular {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+}
+
+/*------------------Contenido de la Barra de Navegación-----------------*/
+   .menu 
+   { display: flex;
+     align-items: center;
+     justify-content: flex-end; /* Todo alineado a la derecha */
+     position: relative;
+     padding: 1rem;
+     z-index: 3; /*Posicion del menu va a estar por delante de 3 capas*/}
+
+     
+   .menu .navbar ul li 
+   { float: left;/* Esto permite al menú acomodarse en fila. */}
+
+   .menu .navbar 
+   { display: none;
+    flex-direction: column;
+    background-color: #000000a3;
+    position: absolute;
+    top: 100%; /* Justo debajo del menú */
+    right: 0;
+    width: 16rem;
+    border-radius: 0 0 10px 10px;
+    transition: all 0.3s ease;}
+
+   .menu .navbar.open 
+   { display: flex;}
+
+
+   .menu .navbar ul li a 
+   { text-decoration: none;
+     font-size: 15px; /* este font-size: 15px es para el tamaño de los enlaces superiores */
+     padding: 20px;
+     color: rgba(255, 255, 255, 0.954);
+     display: block;
+     font-weight: 600;
+     font-family: "Tagesschrift", system-ui;}
+
+   .menu ul li a.activo /*Esto es para que en el menu de hamburguesa salga una franja de cual link esta activo*/
+   { color: rgb(23, 221, 165);
+     font-weight: bold;
+    border-bottom: 5px solid rgb(255, 255, 255);}
+
+
+   .menu .navbar ul li a:hover /* este apartado es igual al anterior solo que con hover el cual permite como un sombreado en el menú con el cursor */
+   { color: #10efdc;}
+
+/*--------------------Estilos Menu Hamburguesa------------------*/
+  
+   .hamburger 
+   { display: none; /*display:none lo deshabilita el menu de hamburguesa no se ve visualmente*/
+     cursor: pointer; /*Es para que tenga un diseño bonito el cursos cuando te acercas al menu hamburguesa*/
+     position: absolute;
+     left: 2.5rem;}
+
+/*------------------------------Carrusel----------------------*/
+   #carrusel 
+   {height: 70vh;}
+
+   #carrusel video
+   { height: 70vh;
+     object-fit: cover;}
+
+   .carousel-caption
+   { font-style:italic;
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    text-align: center;
+    background-color: rgba(240, 248, 255, 0.501);
+    margin: 0 0 12rem 0;
+    border-radius: 1.5rem;}
+
+   .carousel-caption h5
+   { font-size: 1.5rem;}
+
+/*--------------------Linea Divide Contenido-----------------------*/
+   .transicion::after 
+   { content: "";
+     position: absolute;
+     width: 100%;
+     height: 0.5rem; /*Ancho de la linea*/
+     background: linear-gradient(to bottom, rgba(223, 245, 245, 0.881), transparent);}
+
+/*-----------------------------Servicios---------------------------*/
+
+    #servicios /*Fondo de servicios*/
+    { display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: linear-gradient( rgba(0, 0, 0, 0.421)), url("Desarrollo UX/fondoService2.jpg");
+      background-position: center 80%;
+      background-size: cover; }
+    
+     #servicios h2 
+     { font-size: 1.4rem;
+      font-family: "Tagesschrift", system-ui;
+      color: #fff;
+      margin: 2.5rem 0;}
+     
+     .tarjeta-servicios
+      { display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;}
+      
+      .tarjeta-servicio 
+       { width: 19rem;
+        height: 23rem;
+        perspective: 1000px; /*Esto permite la perspectiva 3D y su velocidad de rotacion para que no se vea tan brusco*/
+        padding: 1.5rem;}
+      
+      .contenido-tarjeta 
+       { position: relative;
+        /*Estas lineas se aseguran que el contenido ocupe todo el espacio del contenedor*/
+         width: 100%; 
+         height: 100%;
+         transform-style: preserve-3d;
+         transition: transform 0.6s;}
+
+       .caraDelante,.caraDetras
+         { position: absolute;
+           /*Estas lineas se aseguran que el contenido ocupe todo el espacio del contenedor logrando asi mantener los efectos
+           visuales correctamente alineados*/
+           width: 100%;
+           height: 100%;
+           border-radius: 1.5rem;
+           box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+           /* Esto hace que una cara se vea invisible y la otra sea visible y vicebersa*/
+           backface-visibility: hidden;
+           -webkit-backface-visibility: hidden;}
+
+        .caraDelante 
+         { display: flex;
+           flex-direction: column;
+           justify-content: center;
+           background: linear-gradient(to bottom, rgba(255, 255, 255, 0.896), rgba(181, 165, 165, 0.303));
+           transform: rotateY(0deg);}
+ 
+        .caraDelante h4 
+         { color: rgb(0, 0, 0);
+           text-align: center;
+           font-size: 1.3rem;
+           font-family: "Merriweather", serif;
+           padding-top: 10px;}
+
+        .caraDelante img 
+         { border-radius: 0.8rem;
+           margin-left:3rem;
+           height: 9rem;
+           width: 10rem;
+           box-shadow: 0 0 15px rgba(255, 255, 255, 0.903);}
+        .etiqueta-circular 
+         { position: absolute;
+           color: rgb(0, 0, 0);
+           font-size: 0.8rem;
+           background: rgba(70, 177, 187, 0.67);
+           text-align: center; /*Centra el texto de forma horizontal*/
+           align-content: center;/*Alinia el texto de forma vertical y lo centra*/
+           font-weight: bold;
+           box-shadow: 0.3rem 0.2rem rgba(252, 250, 250, 0.723);
+           width: 5rem;
+           height: 5rem;
+           border-radius: 50%;
+           top: -1.5rem;
+           left: -1rem;
+           font-family: "Merriweather", serif;}
+
+        .caraDetras 
+         { transform: rotateY(180deg);
+           background-image: url("Desarrollo UX/fondoCard.jpg");
+           background-size: cover;
+           background-repeat: no-repeat;
+           background-blend-mode: darken;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-wrap: wrap;}
+
+        .caraDetras h5 
+         { margin-top: 18px;
+           font-size: 1 rem;
+           font-family: "Habibi", serif;}
+
+        .caraDetras ul 
+          { background-color: rgba(0, 0, 0, 0.403);
+            border-radius: 25px;}
+
+        .caraDetras ul li 
+          { list-style: none;
+            text-align: center;
+            color: #fff;
+            font-size: 0.95rem;
+            margin: 0.5rem;
+            font-family: "Habibi", serif;}
+
+        .caraDetras a 
+         { text-decoration: none;
+           font-size: 1rem;
+           border-radius: 8px;
+           color: bisque;
+           padding: 5px;
+           box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.712);}
+
+         /*Da la vuelta a la tarjeta*/
+        .tarjeta-servicio:hover .contenido-tarjeta 
+         { transform: rotateY(180deg);}
+         
+        .btns-serv 
+        { display: flex;
+          justify-content: center;
+          text-align: center;
+          margin: 23px 0px;}
+
+        .btns-serv a 
+         { text-decoration: none;
+           font-size: 0.8rem;
+           margin: 0px 50px;
+           background-color: rgba(72, 111, 241, 0.616);
+           border-radius: 15px;
+           padding: 15px;
+           box-shadow: 0 0 10px #000000;
+           color: #fffcfc;
+           font-weight: bold;
+           font-family: "Habibi", serif;}
+
+/*------------------------------------RESEÑAS------------------------------------*/
+      #Reseñas-Clientes 
+      { display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 1, 1, 0.056)), url("Desarrollo UX/fondoReseña.jpg");
+        background-size: cover;
+        background-position: center 80%;}
+
+      #Reseñas-Clientes h2 
+      { font-size: 1.4rem;
+        margin: 2.5rem 0;
+        font-family: "Tagesschrift", system-ui;
+        color: #fff;}
+
+     .tarjeta-reseñas 
+      { display: flex;
+        flex-direction: row;
+        justify-content:center;
+        flex-wrap: wrap;}
+
+      .reseña 
+       { background-color: #fff9f9bf;
+         margin: 2rem ;
+         text-align: center;
+         padding: 1.8rem;
+         width: 18rem; /*tamaño de la tarjeta de reseña ancho*/
+         height: 20rem; /*tamaño de la tarjeta de reseña alto*/
+         border-radius: 45px;}
+
+      .contenido-reseña 
+        { color: rgb(0, 0, 0);
+          font-size: 1rem;
+          text-align: center;
+          font-family: "Habibi", serif;}
+
+      .corazonReseña 
+       { display: flex;
+         justify-content: center;
+         color: red;
+         margin-top: 20px;
+         font-size: 1.2rem;
+         gap: 2px;}
+
+/*----------------------------Footer--------------------------------*/
+/* === Footer === */
+
+
+#pie-pg {
+  
+  background-color:#00796b;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contenido-pie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.logo {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 4px solid white;
+}
+
+.redes-sociales h3,
+.enlaces h4,
+.metodos-pago h3,
+.map-ubication h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#iconos-siguenos i,
+#iconos-pagos i {
+  color: #fff;
+  margin: 3px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#iconos-siguenos i:hover,
+#iconos-pagos i:hover {
+  color: #00e5ff;
+  transform: scale(1.3) rotate(5deg);
+}
+
+
+.enlaces ul {
+  list-style: none;
+  padding: 0;
+}
+
+.enlaces ul li {
+  margin: 5px 0;
+}
+
+.enlaces ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.enlaces ul li a:hover {
+  color: #fff;
+}
+
+/*----------------------------MODAL--------------------------------*/
+    .modal-content 
+     { 
+       border-radius: 10px;
+       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);}
+
+/*---------------------------Header del modal-----------------------*/
+    .modal-header 
+     { background-color: rgb(12, 190, 170);
+      border-bottom: none;}
+
+    .modal-header .btn-close
+     { opacity: 1; /*Boton de cierre del header modal*/}
+
+    .modal-title /* Titulo del modal*/
+     { color: #000000;
+       font-size: 1.3rem;
+       text-align: center;
+       font-family: "Tagesschrift", system-ui;
+       width: 100%;}
+
+    .modal-title i /*Icono de corazon titulo del modal*/
+     { color: red;
+       font-size: 1.3rem;}
+
+/*------------------------Cuerpo del modal-----------------------*/  
+    form
+     { display: flex;
+       flex-direction: column;
+       gap: 8px;
+       /*animation: fadeIn 1.6s; para animacion luego*/}
+
+    label
+     { font-size: 0.9rem;
+       font-weight: bold;
+       color: #00796b;}
+
+     label i /*Iconos de label del formulario*/
+      { font-size: 0.8rem;
+        margin-right:5px;}
+
+    input, textarea /*Inputs y textarea del formulario*/
+      { padding: 8px;
+        border: 1.5px solid #b2dfdb;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: inherit;
+        background: #f8fafc;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        outline: none;}
+
+    input:focus, textarea:focus , select:focus /*Efecto focus de los inputs, textarea y select del formulario*/ 
+      { border-color: #00796b;
+        box-shadow: 0 0 0 2px #b2dfdb;}
+
+    #enviar-reseña /*Boton de enviar reseña del formulario*/
+      { background: linear-gradient( 45deg,#00796b 0%, #00bfa5 100%);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 8px;
+        font-size: 1rem;}
+    #enviar-reseña:hover /*Efecto hover del boton del formulario*/
+      { background: linear-gradient( 45deg,#00bfa5 0%, #00796b 100%);
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);} 
+    select
+     { outline: none;
+       padding: 8px;
+       border: 1.5px solid #b2dfdb;
+       border-radius: 8px;
+       font-size: 1rem;
+       font-family: inherit;
+       background: #f8fafc;
+       transition: border-color 0.2s, box-shadow 0.2s;}
+
+.mensaje-exito,
+.mensaje-error {
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.mensaje-exito {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  display: block;
+}
+
+.mensaje-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  display: block;
+}
+
+       .mensaje-oculto {
+   display: none;
+}
+/*--------------------------Footer del Modal---------------------*/
+    .modal-footer 
+     { background-color: rgb(12, 190, 170);
+       border-top: none;
+       display: flex;
+       justify-content: center;}
+       
+    .btn-secondary /*Boton del footer del modal*/
+      { background-color: #ffffff5c;
+        color: #000;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;}
+
+   .btn-secondary:hover /*Efecto hover del boton del footer del modal*/
+      { background-color: #f0f0f0;
+        color: #000000;
+        transform: scale(1.05);}
+
+/*Responsive para pantallas pequeñas (Hasta 991px)*/
+@media (max-width: 991px) {
+
+  /*--------------------HEADER Y NAV-----------------------*/
+.header-contenido 
+{height: 7rem;}
+
+  #logo
+  { width: 4.5rem;
+    height: 4.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;}
+
+    .hamburger 
+      { display: block; 
+        color: rgba(255, 255, 255, 0.978);
+        font-size: 20px;
+        margin-left: auto;}
+
+    .menu .navbar ul 
+    { flex-direction: column;
+      padding: 0;
+      margin: 0;}
+
+      .menu .navbar ul li 
+      { float: none;
+        text-align: center;
+
+    .menu .navbar ul li a 
+     {padding: 10px;
+        color: white;
+        border-top: 1px solid #555;}}
+
+ /*---------------------CARRUSEL---------------------------------*/
+   
+       #carrusel
+        { height: 40vh;}/*Ajustando el carrusel al tamaño para dispositivos pequeños*/
+  
+       #carrusel video
+        { height: 40vh;}/*Ajustando el tamaño de los videos para dispositivos pequeños*/
+ 
+       .carousel-caption
+        { font-size: 0.8rem;
+          margin: 0 0 5rem 0;}
+       .carousel-caption h5
+        { font-size: 1.2rem;}
+ /*-----------------------Servicios-----------------------------*/
+      
+       #servicios h2 /*El titulo de Servicios*/
+        { font-size: 1rem;}
+       
+        .tarjeta-servicio 
+      { 
+        width: 15rem;
+        height: 18rem;
+        padding: 0rem;}
+      
+       .etiqueta-circular 
+        { font-size: 0.6rem;
+          box-shadow: 0.2rem 0.1rem rgba(252, 250, 250, 0.723);
+          width: 4rem;
+          height: 4rem;
+          top: -1rem;
+          left: -0.8rem;}
+        
+       .caraDelante h4 
+        { font-size: 1.1rem;}
+       
+       .caraDelante img 
+        { height: 8rem;
+         width: 9rem;}
+
+       .caraDetras ul li 
+       { font-size: 0.8rem;
+         margin: 0.5rem;}
+
+       .caraDetras a 
+        { font-size: 0.8rem;}
+         
+       .btns-serv a 
+        { font-size: 0.7rem;
+          padding: 8px;}
+
+    /*----------------------------RESEÑAS------------------------*/
+    #Reseñas-Clientes h2 
+      { font-size: 1rem;}
+    
+    .reseña 
+       { margin: 0.5rem;
+         width: 15rem; /*tamaño de la tarjeta de reseña ancho*/
+         height: 17rem; /*tamaño de la tarjeta de reseña alto*/}
+
+    .contenido-reseña 
+        { font-size: 0.8rem;}
+
+    .corazonReseña 
+       { font-size: 1rem;}
+
+} 
+
+
+
+/*Responsive para pantallas grandes (Desde 992px)*/
+@media (min-width: 992px) {
+  .menu .navbar {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    width: auto;
+    
+  }
+
+  .menu .navbar ul {
+    flex-direction: row;
+  }
+
+  .menu .navbar ul li {
+    float: left;
+  }
+
+  .menu .navbar ul li a {
+    color: rgb(255, 250, 250);
+    border: none;
+    padding: 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+

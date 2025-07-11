@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desarrolladores - Bell Dermoestética</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #e0f7fa;
+      margin: 0;
+      padding: 0;
+      color: #263238;
+    }
+    .equipo-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(44,62,80,0.09);
+    }
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #00796b;
+      letter-spacing: 1px;
+    }
+    .dev-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .dev-card {
+      background: #e0f2f1;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      padding: 24px 18px;
+      width: 260px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .dev-card:hover {
+      box-shadow: 0 8px 24px rgba(44,62,80,0.13);
+    }
+    .dev-card i {
+      font-size: 2.5rem;
+      color: #00796b;
+      margin-bottom: 12px;
+    }
+    .dev-nombre {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #263238;
+    }
+    .dev-rol {
+      font-size: 1rem;
+      color: #37474f;
+      margin-bottom: 10px;
+    }
+    .dev-contacto a {
+      color: #00796b;
+      text-decoration: none;
+      font-size: 1.1em;
+      margin: 0 8px;
+      transition: color 0.2s;
+    }
+    .dev-contacto a:hover {
+      color: #00e5ff;
+    }
+    .info-extra {
+      text-align: center;
+      margin-top: 30px;
+      color: #37474f;
+      font-size: 1.05em;
+    }
+    @media (max-width: 700px) {
+      .dev-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .dev-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="equipo-container">
+    <h2><i class="fa-solid fa-users"></i> Equipo de Desarrollo</h2>
+    <div class="dev-cards">
+
+      <div class="dev-card">
+        <i class="fa-solid fa-user-astronaut"></i>
+        <div class="dev-nombre">César Cuñachi Chávez</div>
+        <div class="dev-rol">Desarrollador Full Stack & DBA</div>
+        <div class="dev-contacto">
+          <a href="mailto:ceanchavz18@email.com" title="Correo"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/ceanf" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://instagram.com/ceandevf/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <i class="fa-solid fa-user-gear"></i>
+        <div class="dev-nombre">Miguel Manturano Morales</div>
+        <div class="dev-rol">Diseñador UX/UI</div>
+        <div class="dev-contacto">
+          <a href="mailto:miguel@email.com" title="Correo"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/miguel" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <i class="fa-solid fa-user-graduate"></i>
+        <div class="dev-nombre">Alessandra Fiorella Torres</div>
+        <div class="dev-rol">QA & Full Stack</div>
+        <div class="dev-contacto">
+          <a href="mailto:torresfiorela06@gmail.com" title="Correo"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/Torrez11037" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="info-extra">
+      <p>Este proyecto fue realizado por estudiantes de la Universidad, como parte del curso de Desarrollo Web. <br>
+      <strong>Bell Dermoestética</strong> agradece el esfuerzo y dedicación del equipo.</p>
+    </div>
+  </div>
+</body>
+</html>

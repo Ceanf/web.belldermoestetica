@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BELL Dermoestética</title>
+   <link rel="icon" href="/ProyectoWeb3.0/ProyectoWeb/Desarrollo UX/logo_bell.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="servicios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+</head>
+
+<body>
+  <header class="header-contenido">
+  <div id="logo">
+    <img src="../Desarrollo UX/logo_bell.jpg" alt="Logo de la empresa" class="logo-circular">
+  </div>
+  <div class="menu containers">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <!--nav es para agrupar enlaces de navegación para el menú principal-->
+            <nav class="navbar" id="navbar">
+                <ul class="nav-list">
+                    <!--vinculos de las paginas incluidas para las opciones del menú-->
+        <ul class="nav-list">
+    <li><a href="../index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+    <li><a href="servicios.html" class="activo"><i class="fa-solid fa-pump-medical"></i> Servicio</a></li>
+    <li><a href="../nosotros/Nosotros/nosotros.html"><i class="fa-solid fa-heart"></i> Nosotros</a></li>
+    <li><a href="../proyect.contactweb/proyect.contactweb/contacto.html"><i class="fa-solid fa-address-book"></i> Contacto</a></li>
+</ul>
+                </ul>
+            </nav>
+        </div>
+</header>
+
+
+
+    <section class="hero">
+        <h1>"Descubre Nuestros Tratamientos Personalizados"</h1>
+        <p>Realza tu belleza natural con tecnología, experiencia y cuidado profesional</p>
+        <p>Elige tu Tratamiento</p>
+    </section>
+
+    <section class="filtros">
+        <button class="filtro" onclick="filtrarServicios('facial')">Tratamientos Faciales</button>
+        <button class="filtro" onclick="filtrarServicios('corporal')">Tratamientos Corporales</button>
+        <button class="filtro" onclick="filtrarServicios('todos')">Mostrar Todos</button>
+    </section>
+
+    <section class="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="cards">
+
+            <!-- Tratamientos Faciales -->
+            <div class="card" data-categoria="facial">
+                <img src="facial.png" alt="Limpieza Facial">
+                <h3>Limpieza facial profunda</h3>
+                <p>Eliminación de impurezas y células muertas para una piel más limpia y fresca.</p>
+                <a href="https://wa.link/t38nfe" target="_blank"><button class="filtro">AGENDAR</button></a>
+
+            </div>
+            <div class="card" data-categoria="facial">
+
+                <img src="peeling-quimico.jpg" alt="peeling-quimico">
+                <h3>Peeling químico</h3>
+                <p>Renovación de la piel mediante soluciones químicas que mejoran su textura y tono.</p>
+               <a href="https://wa.link/yz2hqo" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+            <div class="card" data-categoria="facial">
+                <img src="microdermo.jpg" alt="Microdermoabrasión">
+                <h3>Microdermoabrasión</h3>
+                <p>Exfoliación mecánica que ayuda a reducir líneas finas, manchas y cicatrices leves.</p>
+                <a href="https://wa.link/0jqygj" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+            <div class="card" data-categoria="facial">
+                <img src="anti-acne.jpg" alt="anti-acne">
+                <h3>Tratamientos antiacné</h3>
+                <p>Procedimientos diseñados para controlar y reducir el acné y sus secuelas.</p>
+               <a href="https://wa.link/0e48m8" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+            <div class="card" data-categoria="facial">
+                <img src="rejuvenecimiento.jpg" alt="rejuvenecimiento">
+                <h3>Rejuvenecimiento facial con láser o radiofrecuencia</h3>
+                <p>Estimulación de colágeno para mejorar la firmeza y elasticidad de la piel.</p>
+                <a href="https://wa.link/6w52xb" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+            <div class="card" data-categoria="facial">
+                <img src="botox.jpg" alt="botox">
+                <h3>Aplicación de toxina botulínica (Botox)</h3>
+                <p>Reducción de arrugas y líneas de expresión.</p>
+                <a href="https://wa.link/ym5gx6" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+            <div class="card" data-categoria="facial">
+                <img src="Hialuronico.jpg" alt="hialurónico">
+                <h3>Rellenos con ácido hialurónico</h3>
+                <p>Aumento de volumen en áreas específicas del rostro.</p>
+                <a href="https://wa.link/h7rrcz" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+            <!-- Tratamientos Corporales -->
+            <div class="card" data-categoria="corporal">
+                <img src="celulitis.jpg" alt="celulitis">
+                <h3>Reducción de medidas y celulitis</h3>
+                <p>Técnicas como masajes reductores, cavitación o criolipólisis para moldear el cuerpo.</p>
+                <a href="https://wa.link/bw1rvx" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+            <div class="card" data-categoria="corporal">
+                <img src="reafirmacion.png" alt="reafirmacion">
+                <h3>Reafirmación de la piel</h3>
+                <p>Uso de tecnologías como radiofrecuencia para mejorar la firmeza cutánea.</p>
+                <a href="https://wa.link/tmdtm2" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+            <div class="card" data-categoria="corporal">
+                <img src="depilacion-laser.jpg" alt="depilacion-laser">
+                <h3>Depilación láser</h3>
+                <p>Eliminación del vello no deseado de forma duradera.</p>
+               <a href="https://wa.link/zntmst" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+            <div class="card" data-categoria="corporal">
+                <img src="cicatriz.jpg" alt="cicatriz">
+                <h3>Tratamiento de estrías y cicatrices</h3>
+                <p>Procedimientos que ayudan a atenuar marcas en la piel.</p>
+                <a href="https://wa.link/uhkthv" target="_blank"><button class="filtro">AGENDAR</button></a>
+            </div>
+
+        </div>
+    </section>
+
+<footer id="pie-pg">
+  <div class="contenido-pie">
+    <div class="redes-sociales">
+      <img src="../Desarrollo UX/logo_bell.jpg" alt="Logo de la empresa" class="logo" width="100" height="100">
+      <h3>Siguenos</h3>
+      <div id="iconos-siguenos">
+        <a href="https://www.facebook.com/jl.obe.148/?locale=es_LA" class="btn-face" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/bell.dermoestetica/" class="btn-insta" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="enlaces">
+      <h4>Enlaces útiles</h4>
+      <nav>
+        <ul class="footer-links">
+          <li>
+            <a href="../nosotros/Nosotros/libro_reclamaciones.html" class="footer-btn" target="_blank">
+              <i class="fa-solid fa-book"></i> Libro Reclamaciones
+            </a>
+          </li>
+          <li>
+            <a href="../nosotros/Nosotros/terminos_condiciones.html" class="footer-btn" target="_blank">
+              <i class="fa-solid fa-file-contract"></i> Términos y Condiciones
+            </a>
+          </li>
+          <li>
+            <a href="../nosotros/Nosotros/politicas_privacidad.html" class="footer-btn" target="_blank">
+              <i class="fa-solid fa-user-shield"></i> Políticas de Privacidad
+            </a>
+          </li>
+          <li>
+            <a href="../nosotros/Nosotros/informacion_empresa.html" class="footer-btn" target="_blank">
+              <i class="fa-solid fa-circle-info"></i> Información Empresa
+            </a>
+          </li>
+          <li>
+            <a href="../nosotros/Nosotros/desarrolladores.html" class="footer-btn" target="_blank">
+              <i class="fa-solid fa-code"></i> Desarrolladores
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <p class="copyright">Copyright &copy; BELL Dermoestética</p>
+    </div>
+    <div class="metodos-pago">
+      <h3>Métodos de Pago</h3>
+      <div id="iconos-pagos">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-solid fa-money-bill"></i>
+      </div>
+    </div>
+    <div class="map-container">
+      <h4>Ubicación</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.177762617559!2d-76.99405022508945!3d-12.168297944175166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9a6ac20c69d%3A0xd8e886c7bfa32c64!2sBell%20Dermoest%C3%A9tica!5e0!3m2!1ses!2spe!4v1746771517615!5m2!1ses!2spe"
+        width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</footer>
+    <script src="servicios.js"></script>
+  <!-- Chatbase Script -->
+  <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized")
+{window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};
+window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}
+const onLoad=function(){const script=document.createElement("script");
+script.src="https://www.chatbase.co/embed.min.js";
+script.id="x2a8QATYCykhFPdA_hyi6";
+script.domain="www.chatbase.co";document.body.appendChild(script)};
+if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+<script>
+  //HAMBURGESA
+
+    function toggleMenu() {
+        const menu = document.getElementById("navbar");
+        menu.classList.toggle("open");
+        
+    }
+</script>
+</body>
+</html>

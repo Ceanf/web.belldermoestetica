@@ -1,0 +1,461 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  list-style: none;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: "Jost", sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* HEADER */
+.header-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 3rem;
+  background-color:#00796b;
+}
+
+#logo {
+  width: 6rem;
+  height: 6rem;
+  margin: 30px 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+.logo-circular {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+}
+
+/*------------------Contenido de la Barra de Navegación-----------------*/
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  padding: 1rem;
+  z-index: 3;
+}
+.menu .navbar ul li {
+  float: left;
+}
+.menu .navbar {
+  display: none;
+  flex-direction: column;
+  background-color: #000000a3;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 16rem;
+  border-radius: 0 0 10px 10px;
+  transition: all 0.3s ease;
+}
+.menu .navbar.open {
+  display: flex;
+}
+.menu .navbar ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.954);
+  display: block;
+  font-weight: 600;
+  font-family: "Tagesschrift", system-ui;
+}
+.menu ul li a.activo {
+  color: rgb(23, 221, 165);
+  font-weight: bold;
+  border-bottom: 5px solid rgb(255, 255, 255);
+}
+.menu .navbar ul li a:hover {
+  color: #10efdc;
+}
+
+/*--------------------Estilos Menu Hamburguesa------------------*/
+.hamburger {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  left: 2.5rem;
+}
+
+/*Responsive para pantallas grandes (Desde 992px)*/
+@media (min-width: 992px) {
+  .menu .navbar {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    width: auto;
+  }
+  .menu .navbar ul {
+    flex-direction: row;
+  }
+  .menu .navbar ul li {
+    float: left;
+  }
+  .menu .navbar ul li a {
+    color: rgb(255, 250, 250);
+    border: none;
+    padding: 20px;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+/* RESPONSIVE HEADER */
+@media (max-width: 991px) {
+  .header-contenido {
+    height: 7rem;
+  }
+
+  #logo {
+    width: 4.5rem;
+    height: 4.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hamburger {
+    display: block;
+    color: rgba(255, 255, 255, 0.978);
+    font-size: 20px;
+    margin-left: auto;
+  }
+
+  .menu .navbar ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu .navbar ul li {
+    float: none;
+    text-align: center;
+  }
+
+  .menu .navbar ul li a {
+    padding: 10px;
+    color: white;
+    border-top: 1px solid #555;
+  }
+}
+
+/* MAIN */
+.agrupar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("imagenes/fondo-paginaContacto.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  gap: 20px;
+}
+
+#seccion1,
+#seccion2 {
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+#seccion1 {
+  font-size: 30px;
+  line-height: 1.6;
+  color: #fffdfd;
+  width: 58%;
+}
+
+#seccion2 {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 38%;
+}
+
+/* FORMULARIO */
+form {
+  display: grid;
+  gap: 15px;
+}
+form label {
+  font-weight: bold;
+}
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #999;
+  font-size: 15px;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+.radio-group {
+  display: flex;
+  gap: 15px;
+}
+form textarea {
+  resize: vertical;
+}
+form button {
+  padding: 12px;
+  background-color: #111;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 150px;
+  margin-top: 10px;
+}
+form button:hover {
+  background-color: #00bfa5;
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+#pie-pg {
+  background-color:#00796b;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contenido-pie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.logo {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 4px solid white;
+}
+
+.redes-sociales h3,
+.enlaces h4,
+.metodos-pago h3,
+.map-ubication h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#iconos-siguenos i,
+#iconos-pagos i {
+  color: #fff;
+  margin: 3px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+#iconos-siguenos i:hover,
+#iconos-pagos i:hover {
+  color: #00e5ff;
+  transform: scale(1.3) rotate(5deg);
+}
+
+.enlaces ul {
+  list-style: none;
+  padding: 0;
+}
+
+.enlaces ul li {
+  margin: 5px 0;
+}
+
+.enlaces ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.enlaces ul li a:hover {
+  color: #fff;
+}
+
+/*chatbot*/
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #000000;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 9999;
+}
+#chat-window {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  max-height: 500px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
+  z-index: 9999;
+}
+#chat-header {
+  background: #d63384;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+#chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  height: 300px;
+  color: #000000;
+}
+#chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+#chat-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+}
+#chat-input button {
+  background: #d63384;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px;
+}
+
+/* ERRORES */
+.mensaje-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+.mensaje-error.visible {
+  opacity: 1;
+  height: auto;
+}
+
+/* RESPONSIVE EXTRA PARA MOVILES */
+@media (max-width: 600px) {
+  .agrupar {
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+
+  #seccion1, #seccion2 {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  #seccion1 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  form button {
+    width: 100%;
+  }
+
+  .map-container {
+    padding-bottom: 75%;
+  }
+
+  .header-contenido {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo-circular {
+    width: 60px;
+    height: 60px;
+  }
+
+  #iconos-siguenos i,
+  #iconos-pagos i {
+    font-size: 1.3rem;
+  }
+}

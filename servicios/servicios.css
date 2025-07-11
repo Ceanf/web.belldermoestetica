@@ -1,0 +1,451 @@
+/* === Estilos base === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+      list-style: none;
+    }
+
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .header-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+   background-color:#00796b;
+}
+
+#logo {
+  width: 6rem;
+  height: 6rem;
+  margin: 30px 0;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgb(255, 255, 255);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.logo-circular {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+}
+/*------------------Contenido de la Barra de Navegación-----------------*/
+   .menu 
+   { display: flex;
+     align-items: center;
+     justify-content: flex-end; /* Todo alineado a la derecha */
+     position: relative;
+     padding: 1rem;
+     z-index: 3; /*Posicion del menu va a estar por delante de 3 capas*/}
+
+     
+   .menu .navbar ul li 
+   { float: left;/* Esto permite al menú acomodarse en fila. */}
+
+   .menu .navbar 
+   { display: none;
+    flex-direction: column;
+    background-color: #000000a3;
+    position: absolute;
+    top: 100%; /* Justo debajo del menú */
+    right: 0;
+    width: 16rem;
+    border-radius: 0 0 10px 10px;
+    transition: all 0.3s ease;}
+
+   .menu .navbar.open 
+   { display: flex;}
+
+
+   .menu .navbar ul li a 
+   { text-decoration: none;
+     font-size: 15px; /* este font-size: 15px es para el tamaño de los enlaces superiores */
+     padding: 20px;
+     color: rgba(255, 255, 255, 0.954);
+     display: block;
+     font-weight: 600;
+     font-family: "Tagesschrift", system-ui;}
+
+   .menu ul li a.activo /*Esto es para que en el menu de hamburguesa salga una franja de cual link esta activo*/
+   { color: rgb(23, 221, 165);
+     font-weight: bold;
+    border-bottom: 5px solid rgb(255, 255, 255);}
+
+
+   .menu .navbar ul li a:hover /* este apartado es igual al anterior solo que con hover el cual permite como un sombreado en el menú con el cursor */
+   { color: #10efdc;}
+
+/*--------------------Estilos Menu Hamburguesa------------------*/
+  
+   .hamburger 
+   { display: none; /*display:none lo deshabilita el menu de hamburguesa no se ve visualmente*/
+     cursor: pointer; /*Es para que tenga un diseño bonito el cursos cuando te acercas al menu hamburguesa*/
+     position: absolute;
+     left: 2.5rem;}
+
+
+    #botonWhat {
+      animation: beat 2s infinite;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+
+    #botonWhat img {
+      width: 22px;
+      height: 22px;
+    }
+
+    .parpadeo {
+      animation: parpadeo 1s infinite;
+    }
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+    @keyframes parpadeo {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+/* === Hero === */
+.hero {
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+.hero h1, .hero p {
+  animation: fadeInUp 1.5s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Filtros === */
+.filtros {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.filtro {
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(13, 71, 161, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(13, 71, 161, 0.2);
+  }
+}
+
+
+.filtro:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+
+/* === Servicios === */
+.servicios {
+  padding: 20px;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 0.8s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.card img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95em;
+  margin-bottom: 15px;
+}
+
+/* === Footer === */
+
+#pie-pg {
+  
+  background-color:#00796b;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contenido-pie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.logo {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 4px solid white;
+}
+
+.redes-sociales h3,
+.enlaces h4,
+.metodos-pago h3,
+.map-ubication h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#iconos-siguenos i,
+#iconos-pagos i {
+  color: #fff;
+  margin: 3px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#iconos-siguenos i:hover,
+#iconos-pagos i:hover {
+  color: #00e5ff;
+  transform: scale(1.3) rotate(5deg);
+}
+
+
+.enlaces ul {
+  list-style: none;
+  padding: 0;
+}
+
+.enlaces ul li {
+  margin: 5px 0;
+}
+
+.enlaces ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.enlaces ul li a:hover {
+  color: #fff;
+}
+/* === Animaciones === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 1.5em;
+  }
+
+  .cards {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  iframe {
+    width: 100% !important;
+    height: auto;
+  }
+
+  #pie-pg {
+    text-align: center;
+  }
+  
+}
+@media (max-width: 600px) {
+  
+
+  .enlaces h4,
+  .metodos-pago h3,
+  .redes-sociales h3,
+  .map-ubication h4 {
+    font-size: 1rem;
+  }
+
+  #iconos-siguenos i,
+  #iconos-pagos i {
+    font-size: 1.3rem;
+  }
+}
+/*Responsive para pantallas pequeñas (Hasta 991px)*/
+@media (max-width: 991px) {
+
+  /*--------------------HEADER Y NAV-----------------------*/
+.header-contenido 
+{height: 7rem;}
+
+  #logo
+  { width: 4.5rem;
+    height: 4.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;}
+
+    .hamburger 
+      { display: block; 
+        color: rgba(255, 255, 255, 0.978);
+        font-size: 20px;
+        margin-left: auto;}
+
+    .menu .navbar ul 
+    { flex-direction: column;
+      padding: 0;
+      margin: 0;}
+
+      .menu .navbar ul li 
+      { float: none;
+        text-align: center;
+
+    .menu .navbar ul li a 
+     {padding: 10px;
+        color: white;
+        border-top: 1px solid #555;}}
+     }
+
+/*Responsive para pantallas grandes (Desde 992px)*/
+@media (min-width: 992px) {
+  .menu .navbar {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    width: auto;
+    
+  }
+
+  .menu .navbar ul {
+    flex-direction: row;
+  }
+
+  .menu .navbar ul li {
+    float: left;
+  }
+
+  .menu .navbar ul li a {
+    color: rgb(255, 250, 250);
+    border: none;
+    padding: 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}

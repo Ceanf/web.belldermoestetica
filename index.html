@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bell Dermoestética</title>
+  <link rel="icon" href="/ProyectoWeb3.0/ProyectoWeb/Desarrollo UX/logo_bell.jpg" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="header-contenido">
+    <div id="logo">
+      <img src="Desarrollo UX/logo_bell.jpg" alt="Logo de la empresa" class="logo-circular">
+    </div>
+    <div class="menu containers">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <!--nav es para agrupar enlaces de navegación para el menú principal-->
+      <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+          <!--vinculos de las paginas incluidas para las opciones del menú-->
+        
+<li><a href="index.html" class="activo"><i class="fa-solid fa-house"></i>Inicio</a></li>
+<li><a href="servicios/servicios.html"><i class="fa-solid fa-pump-medical"></i>Servicio</a></li>
+<li><a href="nosotros/Nosotros/nosotros.html"><i class="fa-solid fa-heart"></i>Nosotros</a></li>
+<li><a href="proyect.contactweb/proyect.contactweb/contacto.html"><i class="fa-solid fa-address-book"></i>Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- Carrusel Bootstrap -->
+    <div class="container-fluid p-0">
+      <div id="carrusel" class="carousel slide " data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carrusel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carrusel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carrusel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video autoplay muted loop class="w-100 overlay-dark">
+              <source src="Desarrollo UX/Videos Carrucel/Pruev.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption" data-aos="fade-up" data-aos-duration="1100">
+              <h5>Belleza con Propósito</h5>
+              <p>Descubre nuestros tratamientos personalizados para cuidar tu piel como se merece.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video autoplay muted loop class="w-100">
+              <source src="Desarrollo UX/Videos Carrucel/Pruev3.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption" data-aos="fade-up" data-aos-duration="1000">
+              <h5>Naturalmente radiante</h5>
+              <p>Productos dermatológicos seguros y resultados visibles desde la primera sesión.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video autoplay muted loop class="w-100">
+              <source src="Desarrollo UX/Videos Carrucel/Pruev6.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption" data-aos="fade-up" data-aos-duration="1100">
+              <h5>Agenda tu Cita Hoy</h5>
+              <p>Contamos con tecnología avanzada y especialistas comprometidos con tu piel.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- Fin del carrusel -->
+    <div class="transicion"></div>
+
+    <!-- Codigo HTML Servicios-->
+
+    <div>
+      <section id="servicios">
+        <h2><i class="fa-solid fa-sun"></i>Servicios Destacados</h2>
+        <div class="tarjeta-servicios">
+          <div class="tarjeta-servicio">
+            <div class="contenido-tarjeta">
+              <div class="caraDelante">
+                <div class="etiqueta-circular">Luce Más Hermosa</div>
+                <img src="Desarrollo UX/Limpieza Facial/limpiezaFacial.png" alt="imagen_Limpieza" width="200">
+                <h4 data-aos="fade-up" data-aos-duration="1200">Limpieza Facial Profunda</h4>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="caraDetras">
+                <h5>Beneficios</h5>
+                <ul>
+                  <li>Elimina Impurezas y células muertas de la piel, dejando un rostro fresco y radiante.</li>
+                  <li>Estimula la circulación sanguínea y mejora la oxigenación de la piel.</li>
+                  <li>Ayuda a prevenir el acné y otros problemas cutáneos.</li>
+                </ul>
+                <a href="https://wa.me/51972468510" target="_blank">Reservar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tarjeta-servicio">
+            <div class="contenido-tarjeta">
+              <div class="caraDelante">
+                <div class="etiqueta-circular">Preventivo</div>
+                <img src="Desarrollo UX/Baby Botox/BabeBotox.png" alt="imagen_BabyBotox" width="200">
+                <h4 data-aos="fade-up" data-aos-duration="1200"> Baby Botox</h4>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="caraDetras">
+                <h5>Beneficios</h5>
+                <ul>
+                  <li>Previene la formación de arrugas y líneas de expresión.</li>
+                  <li>Proporciona un aspecto fresco y juvenil.</li>
+                  <li>Resultados sutiles y naturales.</li>
+                </ul>
+                <a href="https://wa.me/51972468510" target="_blank">Reservar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tarjeta-servicio">
+            <div class="contenido-tarjeta">
+              <div class="caraDelante">
+                <div class="etiqueta-circular">Maxima Juventud</div>
+                <img src="Desarrollo UX/Plasma Plaquetas/PlasmaPlaquetas.png" alt="Plasma-Rico-en-Plaquetas"
+                  width="200">
+                <h4 data-aos="fade-up" data-aos-duration="1200">Plasma Rico en Plaquetas</h4>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="caraDetras">
+                <h5>Beneficios</h5>
+                <ul>
+                  <li>Estimula la regeneración celular y mejora la textura de la piel.</li>
+                  <li>Reduce arrugas y líneas de expresión.</li>
+                  <li>Proporciona un aspecto más joven y saludable.</li>
+                </ul>
+                <a href="https://wa.me/51972468510" target="_blank">Reservar</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="btns-serv">
+          <a href="https://wa.link/e6779l"><i class="fa-solid fa-pump-medical"></i>Conoce Más Servicios</a>
+          <a href="https://wa.link/6av3uz"><i class="fa-solid fa-calendar-days"></i>Reservar Cita</a>
+        </div>
+      </section>
+      <section id="Reseñas-Clientes">
+        <h2><i class="fa-solid fa-star"></i>Reseñas Clientes</h2>
+        <div class="tarjeta-reseñas">
+          <div class="borde-animado">
+            <div class="reseña">
+              <div class="contenido-reseña" data-aos="fade-up" data-aos-duration="1000">
+                <p>"Estaba insegura por mis manchas, pero desde que empecé mis tratamientos en Bell, no solo mejoró
+                  mi piel...¡también mi autoestima! Eternamente agradecida."</p>
+                <p>-María Fernanda Q., 35 años</p>
+                <div class="corazonReseña">
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <!-- 5 estrellas -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="borde-animado">
+            <div class="reseña">
+              <div class="contenido-reseña" data-aos="fade-up" data-aos-duration="1000">
+                <p>"El servicio fue muy bueno, me gustó mucho la limpieza facial. El lugar es súper limpio y relajante.
+                  Solo me hubiese gustado un poco más de detalle al explicar el tratamiento pero igual volveria sin
+                  dudarlo."</p>
+                <p>-Sofia M., 33 años</p>
+                <div class="corazonReseña">
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <!-- 4 estrellas -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="borde-animado">
+            <div class="reseña">
+              <div class="contenido-reseña" data-aos="fade-up" data-aos-duration="1000">
+                <p>"Fui por recomendación de una amiga y fue la mejora decisión. Me hicieron una limpieza profunda y mi
+                  piel nunca se sintió tan fresca. El personal es muy amable y profesional."</p>
+                <p>-Gabriela P., 26 años</p>
+                <div class="corazonReseña">
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+                  <!-- 5 estrellas -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btns-serv">
+          <a href="#" class="btn-exp"  data-bs-toggle="modal" data-bs-target="#miModal" ><i class="fa-regular fa-comments"></i>Cuentanos Tú Experiencia</a>
+        </div>
+      </section>
+    </div>
+  </main>
+ <footer id="pie-pg">
+  <div class="contenido-pie">
+    <div class="redes-sociales">
+      <img src="Desarrollo UX/logo_bell.jpg" alt="Logo de la empresa" class="logo" width="100" height="100">
+      <h3>Siguenos</h3>
+      <div id="iconos-siguenos">
+        <a href="https://www.facebook.com/jl.obe.148/?locale=es_LA" class="btn-face" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/bell.dermoestetica/" class="btn-insta" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="enlaces">
+      <h4>Enlaces útiles</h4>
+      <nav>
+        <ul class="footer-links">
+        <li>
+  <a href="nosotros/Nosotros/libro_reclamaciones.html" class="footer-btn" target="_blank">
+    <i class="fa-solid fa-book"></i> Libro Reclamaciones
+  </a>
+</li>
+<li>
+  <a href="nosotros/Nosotros/terminos_condiciones.html" class="footer-btn" target="_blank">
+    <i class="fa-solid fa-file-contract"></i> Términos y Condiciones
+  </a>
+</li>
+<li>
+  <a href="nosotros/Nosotros/politicas_privacidad.html" class="footer-btn" target="_blank">
+    <i class="fa-solid fa-user-shield"></i> Políticas de Privacidad
+  </a>
+</li>
+<li>
+  <a href="nosotros/Nosotros/informacion_empresa.html" class="footer-btn" target="_blank">
+    <i class="fa-solid fa-circle-info"></i> Información Empresa
+  </a>
+</li>
+<li>
+  <a href="nosotros/Nosotros/desarrolladores.html" class="footer-btn" target="_blank">
+    <i class="fa-solid fa-code"></i> Desarrolladores
+  </a>
+</li>
+        </ul>
+      </nav>
+      <p class="copyright">Copyright &copy; BELL Dermoestética</p>
+    </div>
+    <div class="metodos-pago">
+      <h3>Métodos de Pago</h3>
+      <div id="iconos-pagos">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-solid fa-money-bill"></i>
+      </div>
+    </div>
+    <div class="map-container">
+      <h4>Ubicación</h4>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.177762617559!2d-76.99405022508945!3d-12.168297944175166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9a6ac20c69d%3A0xd8e886c7bfa32c64!2sBell%20Dermoest%C3%A9tica!5e0!3m2!1ses!2spe!4v1746771517615!5m2!1ses!2spe"
+        width="800" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</footer>
+<!-- Modal -->
+  <div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Cuentanos Tú Experiencia <i class="fas fa-heart"></i></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body">
+                <form id="formulario-reseña">
+                  <label><i class="fa-solid fa-user"></i>Nombre:</label>
+                  <input type="text"name="nombre" placeholder="Ingresa tú nombre o seudonimo" required>
+                  <label><i class="fa-solid fa-envelope"></i>Correo:</label>
+                  <input type="email" name="correo"placeholder="Ingresa tú correo" required>
+                  <label><i class="fas fa-heart"></i>Calificación:</label>
+                  <select name="puntuacion">
+                        <option value="5">💖💖💖💖💖</option>
+                        <option value="4">💖💖💖💖</option>
+                        <option value="3">💖💖💖</option>
+                        <option value="2">💖💖</option>
+                        <option value="1">💖</option>
+                  </select>
+
+                  <label><i class="fa-solid fa-comment-dots"></i>Comentario:</label>
+                 <textarea name="comentario" rows="5" placeholder="Comentanos tú experiencia" required></textarea>
+                 <button type="submit" id="enviar-reseña"><i class="fa-solid fa-paper-plane"></i>Enviar Reseña</button>
+               </form>
+                  <!-- Aquí va el mensaje -->
+                 <div id="mensaje-respuesta" class="mensaje-oculto"></div>
+          </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (necesario para el carrusel y el modal) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Chatbase Script -->
+  <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized")
+{window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};
+window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}
+const onLoad=function(){const script=document.createElement("script");
+script.src="https://www.chatbase.co/embed.min.js";
+script.id="x2a8QATYCykhFPdA_hyi6";
+script.domain="www.chatbase.co";document.body.appendChild(script)};
+if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+  <script>
+    //HAMBURGESA
+
+    function toggleMenu() {
+      const menu = document.getElementById("navbar");
+      menu.classList.toggle("open");
+
+    }
+  </script>
+  <script src="javacrip.js"></script>
+</body>
+
+</html>

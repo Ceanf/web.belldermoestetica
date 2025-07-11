@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contacto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header id="cabecera">
+
+
+        <div class="logo-contenedor">
+            <img src="" alt="" class="logo-icono">
+            <!-- Usa la flor del logo si está separada -->
+            <h1 class="logo-nombre">+BELL</h1>
+            <h2 class="logo-slogan">DERMOESTÉTICA</h2>
+            <p class="logo-descripcion">CENTRO ESTÉTICO</p>
+        </div>
+
+
+        <nav id="menu">
+            <ul>
+                <li> Inicio</li>
+                <li> Servicio </li>
+                <li> Contacto</li>
+                <li> Nosotros</li>
+            </ul>
+        </nav>
+
+
+
+
+
+    </header>
+
+
+
+    <div class="agrupar">
+
+
+
+        <section id="seccion1">
+            <article>
+
+                <p> Si tienes alguna consulta, sugerencia u opinión sobre nuestros servicios,
+                    no dudes en escribirnos. Valoramos tu mensaje y nos comprometemos
+                    a responderte con la mayor prontitud posible.
+                    Tu comunicación es importante para seguir mejorando.</p>
+            </article>
+        </section>
+
+
+
+        <section id="seccion2">
+            <article>
+                <header>
+                    <h2> Te escuchamos</h2>
+                </header>
+
+
+                <form action="" onsubmit="enviarFormulario(event)">
+                    <label for="nombre"> Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required> <br><br>
+                    <label for="apellido"> Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required><br><br>
+                    <label for="numero"> Telefono:</label>
+                    <input type="number" id="telefono" name="telefono" required><br><br>
+                    <label for="email"> E-mail:</label>
+                    <input type="email" id="email" name="email" required> <br><br>
+                    <label for="motivo">Motivo:</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="consulta" name="motivo" value="consulta">
+                            <label for="consulta">Consulta</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="opinion" name="motivo" value="opinion">
+                            <label for="opinion">Opinión</label>
+                        </div>
+                    </div>
+                    <label for="comentario">Comentario:</label><br>
+                    <textarea name="comentario" id="comentario" rows="5" required></textarea><br>
+                    <button type="submit">Enviar</button>
+                    <div id="gif-container" style="display: none;">
+                        <img src="hacer-clic.gif" alt="GIF de éxito" />
+                    </div>
+
+                </form>
+
+
+
+
+            </article>
+
+        </section>
+
+    </div>
+
+
+
+
+
+
+    <section id="seccion3">
+        <article>
+            <div>
+
+                <h2> Encuentranos</h2>
+
+                <table>
+                    <tr>
+                        <th></th>
+                        <th> </th>
+                    </tr>
+                    <tr>
+
+                        <td> <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.1776856473307!2d-76.99405022493691!3d-12.168303188078118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9a6ac20c69d%3A0xd8e886c7bfa32c64!2sBell%20Dermoest%C3%A9tica!5e0!3m2!1ses-419!2spe!4v1746984150815!5m2!1ses-419!2spe"
+                                width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                        </td>
+                        <td>
+                            <div>
+                                <h2> Bell Dermoestética</h2>
+                                <hr>
+
+
+                                <h3>Dirección</h3>
+                                <p>Av. Guardia Civil Sur 794, <br>Santiago de Surco 15054</p>
+                                <h3>Horario</h3>
+                                <p> Lunes a Domingo: 10 am - 6 pm </p>
+                                <h3>E-mail</h3>
+                                <p>belldermoestetica@gmail.com</p>
+                                <h3>Telefono</h3>
+                                <p>+51 972468510</p>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+
+
+                </table>
+
+            </div>
+        </article>
+
+
+
+    </section>
+
+
+
+    <aside id="columna">
+        <blockquote> Mensaje uno</blockquote>
+        <blockquote> Mensaje dos</blockquote>
+    </aside>
+
+    <footer id="pie">
+        Derechos reservados &copy; 2025-2026
+
+    </footer>
+    <script src="script.js"></script>
+
+
+
+</body>
+
+</html>

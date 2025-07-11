@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Bell Dermoestética</title>
+  <link rel="stylesheet" href="contacto.css">
+  <link rel="icon" href="/ProyectoWeb3.0/ProyectoWeb/Desarrollo UX/logo_bell.jpg" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header-contenido">
+    <div id="logo">
+      <img src="../../Desarrollo UX/logo_bell.jpg" alt="Logo de la empresa" class="logo-circular">
+    </div>
+    <div class="menu containers">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+          <li><a href="../../index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
+          <li><a href="../../servicios/servicios.html"><i class="fa-solid fa-pump-medical"></i>Servicio</a></li>
+          <li><a href="../../nosotros/Nosotros/nosotros.html"><i class="fa-solid fa-heart"></i>Nosotros</a></li>
+          <li><a href="contacto.html"><i class="fa-solid fa-address-book"></i>Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="agrupar">
+    <section id="seccion1" data-aos="fade-right">
+      <article>
+        <p>Si tienes alguna consulta, sugerencia u opinión sobre nuestros servicios,
+          no dudes en escribirnos. Valoramos tu mensaje y nos comprometemos
+          a responderte con la mayor prontitud posible. Tu comunicación es importante para seguir mejorando.
+        </p>
+      </article>
+    </section>
+
+    <section id="seccion2" data-aos="fade-left">
+      <article>
+        <header>
+          <h2>Te escuchamos</h2>
+        </header>
+
+        <form id="formulario-contacto">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <small id="error-nombre" class="mensaje-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            <small id="error-apellido" class="mensaje-error"> </small>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="number" id="telefono" name="telefono" required>
+            <small id="error-telefono" class="mensaje-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <small id="error-email" class="mensaje-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="motivo">Motivo:</label>
+            <div class="radio-group">
+              <label><input type="radio" name="motivo" value="consulta"> Consulta</label>
+              <label><input type="radio" name="motivo" value="opinion"> Opinión</label>
+            </div>
+            <small id="error-motivo" class="mensaje-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="comentario">Comentario:</label>
+            <textarea name="comentario" id="comentario" rows="5" required></textarea>
+            <small id="error-comentario" class="mensaje-error"></small>
+          </div>
+
+
+          <button type="submit" id="submit-button" disabled>Enviar</button>
+        </form>
+
+
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="pie-pg">
+    <div class="contenido-pie">
+      <div class="redes-sociales">
+        <img src="../../Desarrollo UX/logo_bell.jpg" alt="Logo de la empresa" class="logo">
+        <h3>Síguenos</h3>
+        <div id="iconos-siguenos">
+          <a href="https://www.facebook.com/jl.obe.148/?locale=es_LA" target="_blank" title="Facebook"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/bell.dermoestetica/" target="_blank" title="Instagram"><i
+              class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="enlaces">
+        <h4>Enlaces útiles</h4>
+        <ul class="footer-links">
+          <li><a href="../../nosotros/Nosotros/libro_reclamaciones.html"><i class="fa-solid fa-book"></i> Libro de
+              Reclamaciones</a></li>
+          <li><a href="../../nosotros/Nosotros/terminos_condiciones.html"><i class="fa-solid fa-file-contract"></i>
+              Términos y Condiciones</a></li>
+          <li><a href="../../nosotros/Nosotros/politicas_privacidad.html"><i class="fa-solid fa-user-shield"></i>
+              Políticas de Privacidad</a></li>
+          <li><a href="../../nosotros/Nosotros/informacion_empresa.html"><i class="fa-solid fa-circle-info"></i>
+              Información Empresa</a></li>
+          <li><a href="../../nosotros/Nosotros/desarrolladores.html"><i class="fa-solid fa-code"></i>
+              Desarrolladores</a></li>
+        </ul>
+        <p class="copyright">© BELL Dermoestética</p>
+      </div>
+      <div class="metodos-pago">
+        <h3>Métodos de Pago</h3>
+        <div id="iconos-pagos">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-solid fa-money-bill"></i>
+        </div>
+      </div>
+      <div class="map-container">
+        <h4>Ubicación</h4>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.177762617559!2d-76.99405022508945!3d-12.168297944175166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9a6ac20c69d%3A0xd8e886c7bfa32c64!2sBell%20Dermoest%C3%A9tica!5e0!3m2!1ses!2spe!4v1746771517615!5m2!1ses!2spe"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleMenu() {
+      const menu = document.getElementById("navbar");
+      menu.classList.toggle("open");
+    }
+  </script>
+   <!-- Chatbase Script -->
+  <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized")
+{window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};
+window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}
+const onLoad=function(){const script=document.createElement("script");
+script.src="https://www.chatbase.co/embed.min.js";
+script.id="x2a8QATYCykhFPdA_hyi6";
+script.domain="www.chatbase.co";document.body.appendChild(script)};
+if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+</body>
+
+</html>
